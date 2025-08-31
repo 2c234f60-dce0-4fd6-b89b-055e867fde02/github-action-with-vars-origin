@@ -30,7 +30,7 @@ jobs:
             exit 0
           }
 
-          $reviewers = ${{ vars.ASSIGNEES }}
+          $reviewers = "${{ vars.ASSIGNEES }}
           if (-not $reviewers) {
             Write-Error "No reviewers configured. Set the repository variable ASSIGNEES to a comma-separated list of GitHub usernames."
             exit 1
