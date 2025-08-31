@@ -23,7 +23,7 @@ jobs:
       - name: Request reviewer based on PR number
         shell: pwsh
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           $event = Get-Content $env:GITHUB_EVENT_PATH | ConvertFrom-Json
           $pr = $event.pull_request
