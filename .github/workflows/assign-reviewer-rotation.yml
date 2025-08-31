@@ -22,6 +22,8 @@ jobs:
 
       - name: Request reviewer based on PR number
         shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $event = Get-Content $env:GITHUB_EVENT_PATH | ConvertFrom-Json
           $pr = $event.pull_request
